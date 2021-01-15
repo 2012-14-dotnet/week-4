@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: dotnet tool install --global dotnet-sonarscanner
       - run: |
-          dotnet sonarscanner begin /k:'2012-14-dotnet_week-4' /o:'2012-14-dotnet' /d:sonar.login=$SONARCLOUD_TOKEN
+          dotnet sonarscanner begin /k:'2012-14-dotnet_week-4' /o:'2012-14-dotnet' /d:sonar.host='https://sonarcloud.io/' /d:sonar.login=$SONARCLOUD_TOKEN 
           dotnet build
           dotnet test
           dotnet sonarscanner end /d:sonar.login=$SONARCLOUD_TOKEN
