@@ -25,7 +25,7 @@ jobs:
       SONARCLOUD_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      - run: dotnet install tool --global dotnet-sonarscanner
+      - run: dotnet tool install --global dotnet-sonarscanner
       - run: |
           dotnet sonarscanner begin /k:'2012-14-dotnet_week-4' /o:'2012-14-dotnet' /d:sonar.login=$SONARCLOUD_TOKEN
           dotnet build
